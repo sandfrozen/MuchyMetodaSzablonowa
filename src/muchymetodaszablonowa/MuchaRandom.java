@@ -30,13 +30,9 @@ public class MuchaRandom extends Mucha{
 	if(y<0) { y = -y; vy = -vy; }
 	if(y>1) { y = 2-y;vy = -vy; }
     }
-
+    
     @Override
-    protected void draw(Graphics g) {
-        g.setColor(Color.blue);
-        Rectangle rc = g.getClipBounds();
-        int a = (int) (x * rc.getWidth()),
-                b = (int) (y * rc.getHeight());
-        g.fillOval(a, b, 5, 5);
+    protected Color getColor() {
+        return Color.green;
     }
 }

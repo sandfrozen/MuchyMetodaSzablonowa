@@ -27,12 +27,7 @@ public class MuchaA extends Mucha{
     }
 
     @Override
-    protected void draw(Graphics g) {
-        g.setColor(Color.black);
-        Rectangle rc = g.getClipBounds();
-        int a = (int) (x * rc.getWidth()),
-                b = (int) (y * rc.getHeight());
-        g.fillOval(a, b, 5, 5);
+    protected Color getColor() {
+        return Color.GRAY;
     }
-    
 }

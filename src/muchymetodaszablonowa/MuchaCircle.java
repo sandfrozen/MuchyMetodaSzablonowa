@@ -16,15 +16,6 @@ import java.awt.Rectangle;
 public class MuchaCircle extends Mucha{
 
     @Override
-    protected void draw(Graphics g) {
-        g.setColor(Color.orange);
-        Rectangle rc = g.getClipBounds();
-        int a = (int) (x * rc.getWidth()),
-            b = (int) (y * rc.getHeight());
-        g.fillOval(a, b, 5, 5);
-    }
-
-    @Override
     protected void move() {
         double kat = 0.15;      //new Random().nextDouble() * 0.3 + 0.05;//new Random().nextDouble() * 0.2;
         double vx2 = (vx * (Math.cos(kat))) - (vy * (Math.sin(kat)));
@@ -39,4 +30,8 @@ public class MuchaCircle extends Mucha{
 	if(y>1) { y = 2-y;vy = -vy; }
     }
     
+    @Override
+    protected Color getColor() {
+        return Color.orange;
+    }
 }

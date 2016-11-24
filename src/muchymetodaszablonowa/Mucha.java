@@ -19,13 +19,16 @@ public abstract class Mucha {
     protected double x, y;        // pozycja muchy
     protected double vx, vy;      // predkosc muchy
 
-    protected abstract void draw(Graphics g);
     protected abstract void move();
-    
-    //public void TemplateMethod(Graphics g){
-    //    draw(g);
-    //    move();
-    //}
+    protected abstract Color getColor();
+
+    protected void draw(Graphics g) {
+        g.setColor(getColor());
+        Rectangle rc = g.getClipBounds();
+        int a = (int) (x * rc.getWidth()),
+                b = (int) (y * rc.getHeight());
+        g.fillOval(a, b, 5, 5);
+    }
 
     public Mucha() {
         x = Math.random();
